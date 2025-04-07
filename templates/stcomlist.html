@@ -1,0 +1,112 @@
+
+{% extends 'stpage.html' %}
+{% load static %}
+{% block content %}
+<style>
+                
+
+        h2{
+            text-align: center;
+            height: 50px;
+            margin-top: 1rem;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 1cm;
+            color: black;
+            background-color: rgba(252, 253, 253, 0.658);
+        }
+
+      
+    
+        th{
+            border: 2px solid white;
+            width: 200px;
+            height: 60px;
+            text-align: center;
+            background-color: rgba(92, 168, 230, 0.918);
+            
+            padding: 8px;
+            height: 70px;
+        }
+         tr:nth-child(even) {background-color: #2dd3e9;}
+
+      td{
+        border: 2px solid white;
+          text-align: left;
+  padding: 15px;
+            border: 2px solid white;
+            width: 400px;
+            height: 60px;
+           
+           
+            
+            text-align: center;
+             border-collapse: collapse;
+             background-color: rgba(179, 201, 229, 0.774);
+    
+       }
+       tr:hover {background-color: rgba(56, 62, 146, 0.61);}
+      
+
+       menu{
+        
+       }
+
+
+      table{
+        margin-top: 4rem;
+        width: 100%;
+       }
+
+
+       .ul{
+        width: 200px;
+        color: #fff;
+       }
+
+       
+
+
+
+
+        </style> 
+</head>
+
+    
+      <div class="col-9">
+
+        <h2 style="color: rgb(59, 59, 165);"><b>Students Complaint List</b></h2>
+        
+      
+        <table border="1">
+            <tr>
+              <th><b>ID</b></th>
+              <th><b>Student ID</b></th>
+              <th><b>Name</b></th>
+              <th><b>Hostel</b></th>
+              <th><b>Issue Type</b></th>
+              <th><b>Description</b></th>
+      
+            </tr>
+            {% for display in comreg %}
+            <tr>
+              
+              <td>{{display.0}}</td>
+              <td>{{display.1}}</td>
+              <td>{{display.2}} </td>
+              <td>{{display.3}} </td>
+              <td>{{display.4}} </td>
+              <td>{{display.5}} </td>
+              {% endfor %}
+            </tr>
+          </table>
+          
+          
+          
+      </div>
+    
+
+      
+  </div>
+</div>
+{% endblock %}
+    

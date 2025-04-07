@@ -1,0 +1,68 @@
+{% extends 'stpage.html' %}
+{% block content %}
+<div class="col-9">
+<style>
+  h2{
+    margin-bottom: ;
+  }
+     th{
+            border: 2px solid white;
+            width: 200px;
+            height: 60px;
+            text-align: center;
+            background-color: rgba(92, 168, 230, 0.918);
+            
+            padding: 8px;
+            height: 70px;
+        }
+        td{
+          border: 2px solid white;
+          text-align: left;
+  padding: 15px;
+        }
+        tr:nth-child(even) {background-color: rgb(167, 196, 233);}
+        table {
+          width: 100%;
+  border-collapse: collapse;
+}
+h2  {
+            text-align: center;
+            height: 50px;
+            font-style: italic; 
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 1cm;
+            color: rgb(0, 0, 0);
+           
+        }
+tr:hover {background-color: rgba(56, 62, 146, 0.61);}
+</style>
+    <h2 style="color: rgb(59, 59, 165);"><b>Authority Responses</b></h2>
+    
+    <div style="overflow-x: auto;">
+    <table border="1">
+        <tr class="menu">
+          <th class="menu1"><b> Complaint ID</b></th>
+          <th><b>Hostel</b></th>
+          <th><b>Issue Type</b></th>
+          <th><b>Response</b></th>
+        </tr>
+        {% for display in response %}
+        <tr>
+          
+          <td>{{display.0}} </td>
+          <td>{{display.1}}</td>
+          <td>{{display.2}}</td>
+          <td>{{display.3}} </td>
+          {% endfor %}
+        </tr>
+      </table>
+      
+      
+      
+  </div>
+
+</div>
+  
+</div>
+</div>
+{% endblock %}

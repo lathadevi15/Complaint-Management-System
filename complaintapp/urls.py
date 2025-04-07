@@ -1,0 +1,30 @@
+from django.urls import path
+from . import views
+urlpatterns = [
+    path('',views.index,name='index'),
+    path('stulogin',views.stulogin,name='stulogin'),
+    path('athlogin',views.athlogin,name='athlogin'),
+    path('adlogin',views.adlogin,name='adlogin'),
+    path('comreg',views.comreg,name='comreg'),
+    path('stpage',views.stpage,name='stpage'),
+    path('stsignup',views.stsignup,name='stsignup'),
+    path('athsignup',views.athsignup,name='athsignup'),
+    path('adsignup',views.adsignup,name='adsignup'),
+    path('cmplist',views.cmplist,name='cmplist'),
+    path('athpage',views.athpage,name='athpage'),
+    path('stcomlist',views.athpage,name='stcomlist'),
+    path('response',views.response,name='response'),
+    path('stresponses',views.stresponses,name='stresponses'),
+    path('contact',views.contact,name='contact'),
+    path('about',views.about,name='about'),
+    path('adpage',views.about,name='adpage'),
+    path('athmainpg',views.athmainpg,name='athmainpg'),
+    path('athresponse',views.athresponse,name='athresponse'),
+    path('adcmplist',views.adcmplist,name='adcmplist'),
+    path('adresponses',views.adresponses,name='adresponses'),
+    path('adstlist',views.adstlist,name='adstlist'),
+    path('adathlist',views.adathlist,name='adathlist'),
+    path('adres',views.adres,name='adres'),
+    path('emp',views.adres,name='emp'),
+    path('delete/<int:id>',views.delete,name='delete')
+]

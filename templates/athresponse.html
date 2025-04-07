@@ -1,0 +1,82 @@
+{% extends 'athmainpg.html' %}
+{% block content %}
+{% load static %}
+<div class="col-9">
+    <style>
+         th{
+                border: 2px solid white;
+                width: 200px;
+                height: 60px;
+                text-align: center;
+                 background-color: rgba(92, 168, 230, 0.712);
+            }
+
+
+            tr:nth-child(even) {background-color:antiquewhite;}
+
+  td{
+    border: 2px solid white;
+          text-align: left;
+  padding: 15px;
+            border: 2px solid white;
+            width: 200px;
+            height: 60px;
+            
+            text-align: center;
+             border-collapse: collapse;
+             background-color: rgb(167, 196, 233);
+    
+  }
+  
+  
+
+
+                      h2  {
+                      text-align: center;
+                      height: 50px;
+                      margin-top: 1rem;
+                      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                      font-size: 1cm;
+                      color: black;
+                      background-color: rgba(252, 253, 253, 0.658);
+                  }
+        table {
+          width: 100%;
+  border-collapse: collapse;
+        }
+        tr:hover
+         {
+    background-color: rgba(139, 56, 146, 0.61);
+  }
+
+    </style>
+        <h2 style="color: rgb(59, 59, 165);"><b>Complaint Response List</b></h2>
+        
+      
+        <table border="1">
+            <tr>
+              <th><h5><b> Complaint ID</b></h5></th>
+              <th><h5><b>Hostel</b></h5></th>
+              <th><h5><b>Issue Type</b></h5></th>
+              <th><h5><b>Response</b></h5></th>
+            </tr>
+            {% for display in response %}
+            <tr>
+              
+              <td><h6>{{display.0}} </h6></td>
+              <td><h6>{{display.1}}<h6></td>
+              <td><h6>{{display.2}} </h6></td>
+              <td><h6>{{display.3}}</h6> </td>
+              {% endfor %}
+            </tr>
+          </table>
+          
+          
+          
+      </div>
+    
+    
+      
+    </div>
+    </div>
+{% endblock %}

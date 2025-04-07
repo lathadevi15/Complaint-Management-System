@@ -1,0 +1,155 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title> Student Page </title>
+    
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+       .sidebar
+  {
+      background-color: rgb(252, 250, 243);
+      min-height: 600px;
+      border-right: 1px solid ghostwhite;
+      border-left: 1px solid ghostwhite;
+  }
+ 
+        body {
+         
+          background-color:rgba(11, 49, 99, 0.144);
+         
+          background-attachment:fixed;
+          background-repeat: no-repeat;
+        }
+        h2  {
+            text-align: center;
+            height: 50px;
+            margin-top: 1rem;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 1cm;
+            color: black;
+            background-color: rgba(252, 253, 253, 0.658);
+        }
+        
+        h4{
+          font-family: 'Times New Roman', Times, serif;
+          
+        }
+        
+       
+        h1   {
+            text-align: center;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 1cm;
+            color: rgb(249, 249, 250);
+            background-color:rgba(94, 120, 238, 0.87) ;
+        }
+        .sidebar
+        {
+            background-color: rgb(252, 250, 243);
+            min-height: 600px;
+            border-right: 1px solid ghostwhite;
+            border-left: 1px solid ghostwhite;
+        }
+
+        h5{
+          font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+          font-size: 0.8cm;
+          color: black;
+          background-color:;
+          text-align: center;
+        }
+        .img{
+          margin:50px 0 0 200px;
+        }    
+
+        </style> 
+</head>
+  <body id="bg" style="background-image: url('{% static 'su.jpeg' %}');">
+  
+   <div class="sticky-top">
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-3">
+      <!--
+      <ul class="list-group" style="background-attachment: fixed;">
+        <li class="list-group-item"><h4 style="text-align: center; color: blue;"><b>Menu</b></h4></li>
+        <li class="list-group-item list-group-item-dark" style="background-color: rgb(248, 235, 210);"><a href="/adpage"><button class="btn" style=" width: 280px; height: 50px;"><h4><b>Home</b></h4></button></a></li>
+      
+          <li class="list-group-item list-group-item-dark" style="background-color: rgb(248, 235, 210);"><a href="/adcmplist"><button class="btn"  style=" width: 280px; height: 50px;"><h4><b>View Complaints</b></h4></button></a></li>
+          <li class="list-group-item list-group-item-dark" style="background-color: rgb(248, 235, 210);"><a href="/adresponses"><button class="btn"  style=" width: 280px; height: 50px;"><h4><b>View Responses</b></h4></button></a></li>
+          <li class="list-group-item list-group-item-dark" style="background-color: rgb(248, 235, 210);"><a href="/adstlist"><button class="btn"  style=" width: 280px; height: 50px;"><h4><b>Registered Students List</b></h4></button></a></li>
+          <li class="list-group-item list-group-item-dark" style="background-color: rgb(248, 235, 210);"><a href="/adathlist"><button class="btn"  style=" width: 280px; height: 50px;"><h4><b>Registered Authority List</b></h4></button></a></li>
+          <li class="list-group-item list-group-item-dark" style="background-color: rgb(248, 235, 210);"><a href="#"><button class="btn"  style=" width: 280px; height: 50px;"><h4><b>About Us</b></h4></button></a></li>
+          <li class="list-group-item list-group-item-dark" style="background-color: rgb(248, 235, 210);"><a href="/index"><button class="btn"  style=" width: 280px; height: 50px;"><h4><b>Log Out</b></h4></button></a></li>
+          
+          
+      </ul>
+  </div>-->
+  <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 340px; height: 700px; position: fixed; ">
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+      <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+      <span class="fs-4">Admin Management</span>
+    </a>
+    <hr>
+    <ul class="nav nav-pills flex-column mb-auto">
+      <li class="nav-item">
+        <a href="/adpage" class="nav-link active" aria-current="page">
+          <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"/></svg>
+          Home
+        </a>
+      </li>
+      <li>
+      <a href="/adcmplist" class="nav-link text-white">
+        <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"/></svg>
+        View Complaints
+      </a>
+    </li>
+    <li>
+      <a href="/adresponses" class="nav-link text-white">
+        <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"/></svg>
+        View Responses
+      </a>
+    </li>
+    <li>
+      <a href="/adstlist" class="nav-link text-white">
+        <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"/></svg>
+        Registered Students List
+      </a>
+    </li>
+    <li>
+      <a href="/adathlist" class="nav-link text-white">
+        <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"/></svg>
+        Registered Authority List
+      </a>
+    </li>
+    <li>
+      <a href="/index" class="nav-link text-white">
+        <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"/></svg>
+        Log out
+      </a>
+    </li>
+      </ul>
+      </div>
+</div>
+      {% block content %}
+      <div class="col-9">
+        <h5><p>WELCOME<br>
+          Admin of Sri Venkateswara University</p></h5>
+   
+         <div id="img">
+           <img src="{% static 'logo.png' %}" class="img" width='500' height="500"  alt="Responsive image">
+         </div>
+      </div>
+      {% endblock %}
+  </div>
+</div>
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,131 @@
+
+{% extends 'stpage.html' %}
+{% load static %}
+{% block content %}
+<style>
+  .sidebar
+  {
+      background-color: rgb(252, 250, 243);
+      min-height: 600px;
+      border-right: 1px solid ghostwhite;
+      border-left: 1px solid ghostwhite;
+  }
+ 
+* {
+box-sizing: border-box;
+}
+
+/* Add padding to containers */
+.container {
+padding: 50px 400px 400px 300px;
+background-color: white;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+width: 100%;
+padding: 15px;
+margin: 5px 0 22px 0;
+display: inline-block;
+border: none;
+background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+background-color: #ddd;
+outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+border: 1px solid #f1f1f1;
+margin-bottom: 25px;
+}
+
+/* Set a style for the submit button */
+.registerbtn {
+background-color: #0084ff;
+color: white;
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+width: 200px;
+font-size: 25px ;
+padding: 16px 20px;
+margin-left: 20rem;
+border-radius: 2cm;
+margin-bottom: 20px;
+margin-top: 20px;
+}
+h2  {
+            text-align: center;
+            height: 50px;
+            margin-top: 1rem;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 1cm;
+            color: black;
+            background-color: rgba(252, 253, 253, 0.658);
+        }
+</style>
+<div class="col-9">
+  {% for msg in messages %}
+    <div class="alert alert-primary d-flex align-items-center" role="alert">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+ </svg>
+      <div>
+       {{msg}}
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      
+      </div>
+    </div>
+  {% endfor %}
+  <div class="col-9">
+    <h2 class="row justify-content-center  mt-2" style="color: rgb(59, 59, 165);"> <b>Issue Registration form</b></h2>
+    <form method='POST' action="#">
+      {% csrf_token %}
+      <div class="container-fluid">
+
+        <hr>
+        <label for='id'><b>ID</b></label>
+        <input type="text" placeholder="enter your id" name='id' required>
+    
+        <label for='name'><b>Name</b></label>
+        <input type="text" placeholder="enter your name" name="name" required>
+        <label for="hostel"><b>Select hostel</b></label></br></br>
+        <input type="radio"  value="Premises.1" name="hostel" id="Premises.1" required>   Premises.1</br></br>
+        <input type="radio" value="Premises.2" name="hostel" id="Premises.2" required>  Premises.2</br>
+        </br></br>
+        
+        <label for="issuetype"><b>Issue type</b></label></br></br>
+        <select id="issuetype" class="form-control" required name="issuetype">
+          <option selected>Select</option>
+          <option value="maintanence issues"> Maintanence Issues</option>
+          <option value="electrical issues"> Electrical department</option>
+          <option value="waterissues">Water Issues</option>
+          <option value="messissues">Food Issues</option>
+          <option value="utilitiesissues">Utilities Issues</option>
+          <option value="otherissues">Other Issues</option>
+        </select>    </br></br>
+       
+    
+        <label for="description"><b> COMPLAINT DISCRIPTION</b></label></br></br>
+<textarea class="form-control"  placeholder=" ex : pipe broken in 8th block in at first wing etc .... " name="description" required></textarea>
+ <small for ="description" style="color: red;"> Note : Use official conversation discription to raise complaint</small>
+<br>
+</div>
+        <button type="submit" class="registerbtn">Register</button>
+
+      </div>
+</div>
+</div>
+</div>
+
+{% endblock %}
+
+      
+     
+
+
+    

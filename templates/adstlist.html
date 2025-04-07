@@ -1,0 +1,95 @@
+{% extends 'adpage.html' %}
+{% load static %}
+{% block content %}
+<style>
+    h2  {
+text-align: center;
+height: 50px;
+margin-top: 1rem;
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+font-size: 1cm;
+color: black;
+background-color: rgba(252, 253, 253, 0.658);
+}
+
+
+
+
+
+
+th{
+border: 2px solid white;
+width: 200px;
+height: 60px;
+text-align: center;
+ background-color: rgba(92, 168, 230, 0.712);
+}
+
+
+td{
+border: 2px solid white;
+width: 200px;
+height: 60px;
+
+text-align: center;
+ border-collapse: collapse;
+ background-color: rgba(179, 201, 229, 0.774);
+
+}
+
+menu{
+
+}
+
+
+table{
+margin-top: 4rem;
+}
+
+
+.ul{
+width: 200px;
+color: #fff;
+}
+
+
+
+
+
+
+</style> 
+</head>
+
+
+<div class="col-9">
+
+<h2>Students List</h2>
+
+
+<table border="1">
+<tr class="menu">
+  <th><h4><b>Student ID</b></h4></th>
+  <th><h4><b>Name</b></h4></th>
+  <th><h4><b>Phone Number</b></h4></th>
+  <th><h4><b>Email</b></h4></th>
+</tr>
+{% for display in streg %}
+<tr>
+  
+  <td><b>{{display.0}} </b></td>
+  <td><b>{{display.1}}</b></td>
+  <td><b>{{display.2}} </b></td>
+  <td><b>{{display.3}}</b> </td>
+  {% endfor %}
+</tr>
+</table>
+
+
+
+</div>
+
+
+
+</div>
+</div>
+{% endblock %}
