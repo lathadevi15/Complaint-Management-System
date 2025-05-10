@@ -83,13 +83,13 @@ h2  {
   {% endfor %}
   <div class="col-9">
     <h2 class="row justify-content-center  mt-2" style="color: rgb(59, 59, 165);"> <b>Issue Registration form</b></h2>
-    <form method='POST' action="#">
+    <form method="POST"action="../comreg/">
       {% csrf_token %}
       <div class="container-fluid">
 
         <hr>
         <label for='id'><b>ID</b></label>
-        <input type="text" placeholder="enter your id" name='id' required>
+        <input type="text" name="cid"  placeholder="enter your id"  required>
     
         <label for='name'><b>Name</b></label>
         <input type="text" placeholder="enter your name" name="name" required>

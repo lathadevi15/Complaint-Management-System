@@ -33,10 +33,14 @@ table{
 
 .button{
   background-color: azure;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: 500;
 }
 .button:hover{
   background:rgb(39, 6, 253);
   color: white;
+  border: 2px solid rgb(15, 13, 13);
 }
 .popup
 {
@@ -78,6 +82,13 @@ h2  {
             background-color: rgba(252, 253, 253, 0.658);
         }
 
+        tr:hover td {
+    background-color: rgba(56, 62, 146, 0.61);
+    transition: background-color 0.3s ease;
+    color: #fff;
+    font-weight: 500;
+}
+
 
 .close{
   position: absolute;
@@ -97,23 +108,27 @@ h2  {
 
         <table border="1">
           <tr>
-            <th><h5><b>Complaint ID</b></h5></th>
-            <th><h5><b>ID</b></h5></th>
+            <th><h5><b>Complaint <br> ID</b></h5></th>
+            <th><h5><b> Student <br>ID</b></h5></th>
             <th><h5><b>Name</b></h5></th>
             <th><h5><b>Hostel</b></h5></th>
             <th><h5><b>Issue Type</b></h5></th>
             <th><h5><b>Description</b></h5></th>
+            <th><h5><b>Date <br> Registered</b></h5></th>
+
             <th><h5><b>Status</b></h5></th>
           </tr>
-          {% for display in comreg %}
+          {% for us in comregt %}
           <tr>
-            <td><h6>{{display.0}} </h6></td>
-            <td><h6>{{display.1}} </h6></td>
-            <td><h6>{{display.2}} </h6></td>
-            <td><h6>{{display.3}} </h6></td>
-            <td><h6>{{display.4}} </h6></td>
-            <td><h6>{{display.5}} </h6></td>
-            <td><a href="/response" style="color: #070707;" class="button" id="button" >Respond</a></td>
+            <td>{{us.id}}</td>
+            <td>{{us.cid}}</td>
+            <td>{{us.name}} </td>
+            <td>{{us.hostel}} </td>
+            <td>{{us.issuetype}} </td>
+            <td>{{us.description}} </td>
+            <td>{{ us.date_registered|date:"Y-m-d H:i" }}</td>
+
+            <td><a href="/respons"  class="button" id="button" >Respond</a></td>
             {% endfor %}
           </tr>
         </table>

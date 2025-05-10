@@ -25,18 +25,26 @@ body {
     background-color: #fff;
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* 👈 This keeps it fixed on scroll */
+    background-size: cover;
+    background-position: center;
+    background-color: #fff;
+    margin: 0;
+    padding-top: 200px;
 }
 
 .wrapper {
   width: 570px;
-  height: 770px;
-  background: transparent;
+  height: 800px;
+  background: rgba(116, 114, 114, 0.575);
   border: 3px solid rgba(255, 255, 255, .2);
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(10px);
   box-shadow: 0 0 10 rgba(0, 0, 0, .2);
   color: #0e0d0d;
   border-radius: 20px;
   padding: 30px 40px;
+  margin: 40px 0;
 }
 
 .wrapper h1{
@@ -46,8 +54,9 @@ body {
 
 .wrapper .input-box{
   width: 500px;
-  height: 50px;
+  height: 45px;
   margin: 30px 0;
+  color: white;
 }
 
 .input-box input{
@@ -58,10 +67,11 @@ body {
   outline: none;
   border: 2px solid rgba(255, 255, 255, .2);
   border-radius: 40px;
+  color: #fff;
 }
 
 .input-box input::placeholder{
-  color: #0a0a0a;
+  color: #ffffff;
 }
 
 .input-box i{
@@ -77,11 +87,13 @@ body {
   justify-content: space-between;
   font-size: 14.5px;
   margin: -15px 0 15px;
+  color: white;
 }
 
 .remember-forget label input{
   accent-color: #fff;
   margin-right: 3px;
+  color: white;
 }
 
 .remember-forget a{
@@ -106,6 +118,22 @@ body {
   color: #333;
   font-weight: 600;
 }
+
+.wrapper .registerbtn:hover {
+  background: #020479; /* green background */
+  color: #fff;  
+  border-radius: 10px 10px; 
+  transition: all 0.3s ease;
+      /* white text */
+}
+.wrapper .btn:hover {
+  background: #020479; /* green background */
+  color: #fff;  
+  border-radius: 10px 10px; 
+  transition: all 0.3s ease;
+      /* white text */
+}
+
 
 .wrapper .register-link{
   width: 40%;
@@ -168,6 +196,38 @@ body {
   width: 100px;
 }
 
+.wrapper .btn{
+  width: 100%;
+  height: 45px;
+  background: #fff;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+  font-weight: 600;
+  
+}
+
+.wrapper .btn:hover {
+  background: #020479; /* green background */
+  color: #fff;  
+  border-radius: 10px 10px; 
+  transition: all 0.3s ease;
+      /* white text */
+}
+
+.wrapper .register-link{
+  width: 40%;
+  font-size: 14.5px;
+  text-align: center;
+  margin: 20px 0 15px;
+}
+.register-link p a:hover{
+  text-decoration: underline;
+}
 
 </style>
 
@@ -229,12 +289,12 @@ body {
          <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
        </div>
        <div class="input-box">
-        <button type="submit" class="registerbtn" id="button">Submit</button>
+        <button type="submit" class="btn" id="button">Submit</button>
       </div>
-      <div class="btn">
-        <a href="/stulogin" class="btn btn-primary btn-lg" tabindex="-1" role="button" style="color: black;">Login</a>
-       </div>
-     
+      <div class="register-link">
+       
+        <a href="/stulogin" class="btn btn-primary btn-lg" tabindex="-1" role="button" aria-disabled="true">Login</a>
+      </div>
     </form>
   </div>
   <div class="popup">

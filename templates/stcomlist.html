@@ -3,72 +3,55 @@
 {% load static %}
 {% block content %}
 <style>
-                
+  table {
+      width: 100%;
+      border-collapse: collapse;
+  }
 
-        h2{
-            text-align: center;
-            height: 50px;
-            margin-top: 1rem;
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-            font-size: 1cm;
-            color: black;
-            background-color: rgba(252, 253, 253, 0.658);
-        }
+  th {
+      border: 2px solid white;
+      width: 200px;
+      height: 60px;
+      text-align: center;
+      background-color: rgba(92, 168, 230, 0.712);
+  }
 
-      
-    
-        th{
-            border: 2px solid white;
-            width: 200px;
-            height: 60px;
-            text-align: center;
-            background-color: rgba(92, 168, 230, 0.918);
-            
-            padding: 8px;
-            height: 70px;
-        }
-         tr:nth-child(even) {background-color: #2dd3e9;}
+  td {
+      border: 2px solid white;
+      text-align: center;
+      padding: 15px;
+      width: 200px;
+      height: 60px;
+      background-color: rgb(167, 196, 233);
+      font-weight: 500;
+  }
 
-      td{
-        border: 2px solid white;
-          text-align: left;
-  padding: 15px;
-            border: 2px solid white;
-            width: 400px;
-            height: 60px;
-           
-           
-            
-            text-align: center;
-             border-collapse: collapse;
-             background-color: rgba(179, 201, 229, 0.774);
-    
-       }
-       tr:hover {background-color: rgba(56, 62, 146, 0.61);}
-      
+  tr:nth-child(even) {
+      background-color: #2dd3e9;
+  }
 
-       menu{
-        
-       }
+  /* 👇 Ensure this comes after nth-child */
+  tr:hover {
+      background-color: rgba(56, 62, 146, 0.61) !important;
+  }
+  tr:hover td {
+  background-color: rgba(56, 62, 146, 0.61);
+  transition: background-color 0.3s ease;
+  color: #fff;
+}
 
 
-      table{
-        margin-top: 4rem;
-        width: 100%;
-       }
+  h2 {
+      text-align: center;
+      height: 50px;
+      margin-top: 1rem;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      font-size: 1cm;
+      color: black;
+      background-color: rgba(252, 253, 253, 0.658);
+  }
+</style>
 
-
-       .ul{
-        width: 200px;
-        color: #fff;
-       }
-
-       
-
-
-
-
-        </style> 
 </head>
 
     
@@ -79,23 +62,24 @@
       
         <table border="1">
             <tr>
-              <th><b>ID</b></th>
+              <th><b>CompalintID ID</b></th>
               <th><b>Student ID</b></th>
               <th><b>Name</b></th>
               <th><b>Hostel</b></th>
               <th><b>Issue Type</b></th>
               <th><b>Description</b></th>
+              <th><b>Date <br> Registered</b></th>
       
             </tr>
-            {% for display in comreg %}
+            {% for us in comregt %}
             <tr>
-              
-              <td>{{display.0}}</td>
-              <td>{{display.1}}</td>
-              <td>{{display.2}} </td>
-              <td>{{display.3}} </td>
-              <td>{{display.4}} </td>
-              <td>{{display.5}} </td>
+              <td>{{us.id}}</td>
+              <td>{{us.cid}}</td>
+              <td>{{us.name}} </td>
+              <td>{{us.hostel}} </td>
+              <td>{{us.issuetype}} </td>
+              <td>{{us.description}} </td>
+              <td>{{ us.date_registered|date:"Y-m-d H:i" }}</td>
               {% endfor %}
             </tr>
           </table>

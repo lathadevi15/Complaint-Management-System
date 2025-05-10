@@ -1,0 +1,48 @@
+{% extends 'athmainpg.html' %}
+{% block content %}
+{% load static %}
+<div class="col-9">
+    <style>
+        body{
+            justify-content: center;
+            justify-items: center;
+        }
+        .in{
+            font-size: 20px;
+            margin: 10px;
+        }
+        .res{
+            width: 50%;
+            align-self: center;
+            align-content: center;
+            margin-left: 250px;
+            margin-bottom: 10px;
+        }
+    </style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  
+    <center>
+        <form method="POST" action="/updateresponse/{{dresponse.id}}/">
+            {% csrf_token %}
+            <div class="container">
+                <div class="form-group row">
+                    <label for="id" class="in">Edit Response</label>
+                    <input type="text" name="res" class="res" id="id" required value="{{ dresponse.response }}" />
+                </div>
+                <button type="submit" class="btn btn-success" >Update</button>
+            </div>
+        </form>
+        
+    </center>
+    
+</body>
+</html>
+</div>
+{% endblock %}

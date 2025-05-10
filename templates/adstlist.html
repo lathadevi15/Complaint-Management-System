@@ -68,18 +68,19 @@ color: #fff;
 
 <table border="1">
 <tr class="menu">
+  <th><h4><b>S.No</b></h4></th>
   <th><h4><b>Student ID</b></h4></th>
   <th><h4><b>Name</b></h4></th>
   <th><h4><b>Phone Number</b></h4></th>
   <th><h4><b>Email</b></h4></th>
-</tr>
-{% for display in streg %}
+</tr>           
+ {% for rs in dresponse %}
 <tr>
-  
-  <td><b>{{display.0}} </b></td>
-  <td><b>{{display.1}}</b></td>
-  <td><b>{{display.2}} </b></td>
-  <td><b>{{display.3}}</b> </td>
+  <td><h6>{{rs.id}} </h6></td>
+  <td><h6>{{rs.sid}} </h6></td>
+  <td><h6>{{rs.Name}}<h6></td>
+  <td><h6>{{rs.Phoneno}} </h6></td>
+  <td><h6>{{rs.Email}}</h6> </td>
   {% endfor %}
 </tr>
 </table>

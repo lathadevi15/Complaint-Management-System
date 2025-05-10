@@ -77,6 +77,15 @@ span{
             background-color: rgba(252, 253, 253, 0.658);
         }
 
+        .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Light transparent white */
+  border-radius: 8px; /* Optional: makes it look smooth */
+}
+.nav-link.active {
+  background-color: #ffc107;  /* Bootstrap warning color, or pick your own */
+  color: #000 !important;     /* Ensure text is visible */
+  border-radius: 8px;
+}
 
         </style>  
 </head>
@@ -108,13 +117,13 @@ span{
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
       <li class="nav-item">
-        <a href="/stpage" class="nav-link active" aria-current="page">
+        <a href="/stpage"  class="nav-link active {% if request.path == '/stpage' %}active{% endif %}"  aria-current="page">
           <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"/></svg>
           Home
         </a>
       </li>
       <li>
-      <a href="/comreg" class="nav-link text-white">
+      <a href="/comreg" class="nav-link text-white {% if request.path == '/stpage' %}active{% endif %}">
         <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"/></svg>
         File a Issue
       </a>

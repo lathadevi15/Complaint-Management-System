@@ -33,9 +33,9 @@ body {
 .wrapper {
   width: 570px;
   height: 480px;
-  background: transparent;
+  background: rgba(116, 114, 114, 0.575);
   border: 2px solid rgba(255, 255, 255, .2);
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(10px);
   box-shadow: 0 0 10 rgba(0, 0, 0, .2);
   color: #080808;
   border-radius: 20px;
@@ -51,6 +51,7 @@ body {
   width: 500px;
   height: 50px;
   margin: 30px 0;
+  color: #fff;
 }
 
 .input-box input{
@@ -61,10 +62,11 @@ body {
   outline: none;
   border: 2px solid rgba(255, 255, 255, .2);
   border-radius: 40px;
+  color: #fff;
 }
 
 .input-box input::placeholder{
-  color: #0a0a0a;
+  color: #ffffff;
 }
 
 .input-box i{
@@ -108,6 +110,15 @@ body {
   font-size: 16px;
   color: #333;
   font-weight: 600;
+  
+}
+
+.wrapper .btn:hover {
+  background: #020479; /* green background */
+  color: #fff;  
+  border-radius: 10px 10px; 
+  transition: all 0.3s ease;
+      /* white text */
 }
 
 .wrapper .register-link{
@@ -117,11 +128,6 @@ body {
   margin: 20px 0 15px;
 }
 
-.register-link p a{
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-}
 
 .register-link p a:hover{
   text-decoration: underline;
@@ -167,7 +173,7 @@ body {
 
               <div class="register-link">
                 <p>Don't have an account?</p>
-                <a href="/stsignup" class="btn btn-primary btn-lg" tabindex="-1" role="button" aria-disabled="true">Sign Up/Register</a>
+                <a href="/stsignup" class="btn btn-primary btn-lg" tabindex="-1" role="button" aria-disabled="true">Sign Up</a>
               </div>
               
           

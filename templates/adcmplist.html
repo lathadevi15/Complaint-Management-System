@@ -8,7 +8,9 @@
             width: 200px;
             height: 60px;
             text-align: center;
+            font-size: 10;
             background-color: rgba(92, 168, 230, 0.918);
+            
   }
 
   tr:nth-child(even) {background-color:antiquewhite;}
@@ -38,25 +40,7 @@ table{
     background:darkslateblue;
     color: #D6EEEE;
   }
-  .popup
-  {
-    background: rgba(24, 97, 35, 0.527);
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top:0;
-    display: none;
-    justify-content: center;
-    align-items: center;
-  }
-  .popup-content{
-    height: 250px;
-    width: 500px;
-    background: #ffffff;
-    padding: 20px;
-    border-radius: 5px;
-    position: relative;
-  }
+
   textarea
   {
     margin-top: 20px;
@@ -78,7 +62,16 @@ table{
     box-shadow: 6px 6px 29px -4px black;
     cursor: pointer;
   }
-  
+  tr:hover td {
+  background-color: rgba(38, 42, 94, 0.61);
+  transition: background-color 0.3s ease;
+  font-weight: 450;
+  color: #fff;
+}
+tr:hover {
+      background-color: rgba(56, 62, 146, 0.61) !important;
+  }
+
   h2  {
                       text-align: center;
                       height: 50px;
@@ -88,34 +81,41 @@ table{
                       color: black;
                       background-color: rgba(252, 253, 253, 0.658);
                   }
+  
+  .button{
+    color: white;
+   
+  }
   </style>
   <div class="col-9">
     <h2 style="color: rgb(59, 59, 165);"><b>Complaint List</b></h2>
-          <table border="1">
-            <tr>
-              <th>Complaint ID</th>
-              <th>ID</th>
-              <th>Name</th>
-              <th>Hostel</th>
-              <th>Issue Type</th>
-              <th>Description</th>
-              <th>Status</th>
-            </tr>
-            {% for display in comreg %}
-            <tr>
-              <td><h6>{{display.0}} </h6></td>
-              <td><h6>{{display.1}} </h6></td>
-              <td><h6>{{display.2}} </h6></td>
-              <td><h6>{{display.3}} </h6></td>
-              <td><h6>{{display.4}} </h6></td>
-              <td><h6>{{display.5}} </h6></td>
-              <td><h6><a href="/adres" class="button" id="button" >Respond</a></td>
-                <td>
-                  <a href="/delete/{{display.0}}" class="btn btn-danger">Delete</a>
-                </td>
-              {% endfor %}
-            </tr>
-          </table>
+
+    <table border="1">
+      <tr>
+        <th><h6><b>Complaint ID</b></h6></th>
+        <th><h6><b>Student ID</b></h6></th>
+        <th><h6><b>Name</b></h6></th>
+        <th><h6><b>Hostel</b></h6></th>
+        <th><h6><b>Issue Type</b></h6></th>
+        <th><h6><b>Description</b></h6></th>
+        <th><h6><b>Date <br> Registered</b></h6></th>
+        <th><h6><b>Status</b></h6></th>
+        
+
+      </tr>
+      {% for us in comregt %}
+      <tr>
+        <td>{{us.id}}</td>
+        <td>{{us.cid}}</td>
+        <td>{{us.name}} </td>
+        <td>{{us.hostel}} </td>
+        <td>{{us.issuetype}} </td>
+        <td>{{us.description}} </td>
+        <td>{{ us.date_registered|date:"Y-m-d H:i" }}</td>
+        <td><a href="/deleteresponse/{{us.id}}"  class="btn btn-danger" id="button" >Delete Complaint</a></td>
+        {% endfor %}
+      </tr>
+    </table>
   </div>
   
 {% endblock %}

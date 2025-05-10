@@ -24,6 +24,9 @@ SECRET_KEY = 'django-insecure-psrdvbmju+1%t&1^y@ft-id5=p6pgg!k5+3=6$*036epwesgd=
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+LOGIN_REDIRECT_URL = '/stpage/'
+LOGOUT_REDIRECT_URL = '/stlogin/'
+
 
 ALLOWED_HOSTS = []
 

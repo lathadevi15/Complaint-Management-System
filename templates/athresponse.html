@@ -27,6 +27,11 @@
              background-color: rgb(167, 196, 233);
     
   }
+
+  .btn:hover{
+    background: rgb(12, 17, 88);
+    border-radius: 0;
+  }
   
   
 
@@ -44,29 +49,31 @@
           width: 100%;
   border-collapse: collapse;
         }
-        tr:hover
-         {
-    background-color: rgba(139, 56, 146, 0.61);
-  }
-
+        tr:hover td {
+    background-color: rgba(56, 62, 146, 0.61);
+    transition: background-color 0.3s ease;
+    color: #fff;
+    font-weight: 500;
+}
     </style>
-        <h2 style="color: rgb(59, 59, 165);"><b>Complaint Response List</b></h2>
+        <h2 style="color: rgb(36, 36, 212);"><b>Complaint Response List</b></h2>
         
       
-        <table border="1">
+<table border="1">
             <tr>
               <th><h5><b> Complaint ID</b></h5></th>
               <th><h5><b>Hostel</b></h5></th>
               <th><h5><b>Issue Type</b></h5></th>
               <th><h5><b>Response</b></h5></th>
             </tr>
-            {% for display in response %}
+            {% for rs in dresponse %}
             <tr>
               
-              <td><h6>{{display.0}} </h6></td>
-              <td><h6>{{display.1}}<h6></td>
-              <td><h6>{{display.2}} </h6></td>
-              <td><h6>{{display.3}}</h6> </td>
+              <td><h6>{{rs.id}} </h6></td>
+              <td><h6>{{rs.hostel}}<h6></td>
+              <td><h6>{{rs.issuetype}} </h6></td>
+              <td><h6>{{rs.response}}</h6> </td>
+              <td><a href="/editresponse/{{rs.id}}"  class="btn btn-primary" >update Response</a></td>
               {% endfor %}
             </tr>
           </table>
@@ -79,4 +86,4 @@
       
     </div>
     </div>
-{% endblock %}
+{% endblock %}        

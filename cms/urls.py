@@ -33,7 +33,7 @@ urlpatterns = [
     path('cmplist/',views.cmplist),
     path('athpage/',views.athpage),
     path('stcomlist/',views.stcomlist),
-    path('response/',views.response),
+    path('respons/',views.response),
     path('contact/',views.contact),
     path('about/',views.about),
     path('stresponses/',views.stresponses),
@@ -46,5 +46,10 @@ urlpatterns = [
     path('adresponses/',views.adresponses),
     path('adres/',views.adres),
     path('emp/',views.emp),
-    path('delete/<int:id>',views.delete),
+    path('deleteresponse/<int:id>',views.deleteresponse),
+    path('editresponse/<int:id>/',views.editresponse),
+    path('updateresponse/<int:id>/',views.updateresponse),
+    path('athabout/',views.athabout),
+    path('athinst/',views.athinst),
+    
 ]

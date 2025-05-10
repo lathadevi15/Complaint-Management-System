@@ -33,9 +33,9 @@ body {
 .wrapper {
   width: 570px;
   height: 480px;
-  background: transparent;
+  background: rgba(116, 114, 114, 0.575);
   border: 2px solid rgba(255, 255, 255, .2);
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(10px);
   box-shadow: 0 0 10 rgba(0, 0, 0, .2);
   color: #fff;
   border-radius: 20px;
@@ -109,7 +109,12 @@ body {
   color: #333;
   font-weight: 600;
 }
-
+.wrapper .btn:hover{
+  background:rgb(5, 121, 199);
+  color: #fff;
+  border-radius: 10px;
+  transition: 0.3s ease;
+}
 .wrapper .register-link{
   width: 40%;
   font-size: 14.5px;
@@ -167,7 +172,7 @@ body {
 
               <div class="register-link">
                 <p>Don't have an account?</p>
-                <a href="/athsignup" class="btn btn-primary btn-lg" tabindex="-1" role="button" aria-disabled="true">Sign Up/Register</a>
+                <a href="/athsignup" class="btn btn-primary btn-lg" tabindex="-1" role="button" aria-disabled="true">Sign Up</a>
               </div>
               
           

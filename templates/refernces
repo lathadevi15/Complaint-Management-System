@@ -1,0 +1,79 @@
+
+  """ 
+   global id,nm,phno,em,pwd,repwd
+    if request.method=="POST":
+        m=sql.connect(host= "localhost",user="lathadevi0007@gmail.com",password="latha",database='complaintdb')
+        cursor=m.cursor()
+        d=request.POST
+        for key,value in d.items():
+            if key=="id":
+                id=value
+            if key=="name":
+                nm=value
+            if key=="phno":
+                phno=value
+            if key=="email":
+                em=value
+            if key=="psw":
+                pwd=value
+            if key=="psw-repeat":
+                repwd=value
+           
+            
+        c="insert into streg Values('{}','{}','{}','{}','{}','{}')".format(id,nm,phno,em,pwd,repwd)
+        cursor.execute(c)
+        m.commit()
+        messages.success(request,'you have registered successfully')"""
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        def comreg(request):
+    global id,nm,hs,iss,des,aid,img
+    if request.method=="POST":
+        m=sql.connect(host= "localhost",user="lathadevi0007@gmail.com",password="latha",database='complaintdb')
+        cursor=m.cursor()
+        d=request.POST
+        for key,value in d.items():
+            if key=="aid":
+                aid=value
+            if key=="id":
+                id=value
+            if key=="name":
+                nm=value
+            if key=="hostel":
+                hs=value       
+            if key=="issuetype":
+                iss=value
+            if key=="description":
+                des=value  
+            if key=="imageproof":
+                img=value   
+               
+        c="insert into comreg Values('{}','{}','{}','{}','{}','{}','{}' )".format(aid,id,nm,hs,iss,des,img)
+        cursor.execute(c)
+        m.commit()
+        messages.success(request,'Complaint has been registered successfully')
+    return render(request,'comreg.html',{})
+    
+
+
+    
+def stresponses(request):
+    cursor=connection.cursor()
+    cursor.execute("call response()")
+    results=cursor.fetchall()
+    return render(request,'stresponses.html',{'response':results})
+
